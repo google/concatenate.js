@@ -24,6 +24,31 @@ test('simple', function(t) {
   t.end();
 });
 
+test('filename content', function(t) {
+  var js = concatenate([
+      {
+        content: 'function foo() {alert("foo");\nalert("foo2")}',
+        filename: 'js/foo.js\n\r\u2028\u2029\n\r\u2028\u2029'
+      },
+      {
+        content: 'function bar() {return "ret"}',
+        filename: 'js/bar.js\n\r\u2028\u2029',
+        hostname: 'app2\n\r\u2028\u2029\n\r\u2028\u2029'
+      }
+  ]);
+
+  t.ok(js.indexOf('js/foo.js"') != -1);
+  t.ok(js.indexOf('js/bar.js"') != -1);
+  t.ok(js.indexOf('app2/') != -1);
+
+  eval(js);
+
+  t.is(typeof foo, 'function');
+  t.is(typeof bar, 'function');
+  t.is(bar(), 'ret');
+  t.end();
+});
+
 test('syntax error', function(t) {
   var js = concatenate([
       {
