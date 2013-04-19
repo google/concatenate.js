@@ -11,7 +11,7 @@ Provides a function to concatenate a list of JavaScript files into a single outp
 
 ## Usage
 
-    var js = concatenate([
+    var js = require('./concatenate')([
       {
         content: 'function foo() {alert("foo")}',
         filename: 'js/foo.js'
@@ -32,8 +32,8 @@ This is using multiple eval calls with [@sourceURL](https://blog.getfirebug.com/
 ## How about source maps
 
 This is better than source maps under these circumstances:
-- your input language is JS
-- you are not working with obfuscated JS
+- Your input language is JS
+- You are not working with obfuscated JS
 
 Why is it better:
 - This is the real deal. The browser acts like there were real files. No leaky abstractions.
@@ -49,7 +49,7 @@ When you have a syntax error at least V8 based browsers will not show you a line
 
 - Chrome Dev Tools
 - Safari Dev Tools
-- Firebug
+- Firebug (Not recommended. It gets really slow with large numbers of files)
 
 ## Advanced Usage
 
