@@ -1,16 +1,24 @@
 
+
+/**
+ * @typedef {{
+ *     content: string,
+ *     filename: string,
+ *     hostname: (string|undefined)
+ * }}
+ */
+var File;
+
+
 /**
  * Turns JS "files" into a string of concatenated JS that when evaluated in the
  * browser will maintain the original files in the Dev Tools.
  *
- * @param {!Array.<{
- *     content: string,
- *     filename: string,
- *     hostname: (string|undefined)
- * }>} files A list of JS "files".
+ * @param {!Array.<File>} files A list of JS "files".
+ * @param {(function(string, File):string)=} opt_wrap
  * @return {string} The concatenated JS.
  */
-module.exports = function(files) {
+module.exports = function(files, opt_wrap) {
   var allJs = '';
   for (var i = 0; i < files.length; i++) {
     var file = files[i];
@@ -23,10 +31,14 @@ module.exports = function(files) {
 
     js = 'try{' + js + '}catch(e){if(!e.fileName)e.message+=' +
         JSON.stringify(' ' + url) + ';throw e}\n\n';
+    if (opt_wrap) {
+      js = opt_wrap(js, file);
+    }
     allJs += js;
   }
   return allJs;
 };
+
 
 /**
  * @param {string} str

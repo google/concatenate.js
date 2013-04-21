@@ -53,4 +53,4 @@ When you have a syntax error at least V8 based browsers will not show you a line
 
 ## Advanced Usage
 
-For simulating a CommonJS environment you may consider calling concatenate(…) with a single file and embedding the output inside the module-wrapping closure. Due to the nature of non-global JS eval that should work just fine.
+The exported function supports a second param which is a funcion that gets to modify the output after the eval was added. You may find this useful for i.e. adding CommonJS module wrappers. For an example see example_common_js_simulator.js.

@@ -1,3 +1,5 @@
+// For output, see try http://jsbin.com/oradut/1/edit with Chrome Dev Tools.
+
 var concatenate = require('./concatenate');
 
 console.log(concatenate([
