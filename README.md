@@ -1,7 +1,9 @@
 concatenate.js
 ==============
 
-Provides a function to concatenate a list of JavaScript files into a single output stream in a way that, when executed in the browser, maintains the illusion in JS development tools, that the files had been loaded as individual script tags.
+Demonstrates a technique to bundle large numbers of JS files into a single file while maintaining the original file boundaries and names inside development tools. Use this to make your JavaScript serving system be awesome during development without the complexity of source maps.
+
+The module rovides a single function to concatenate a list of JavaScript files into a single output stream in a way that, when executed in the browser, maintains the illusion in JS development tools, that the files had been loaded as individual script tags.
 
 ## When would you use it
 
