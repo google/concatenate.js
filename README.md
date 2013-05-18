@@ -56,3 +56,13 @@ When you have a syntax error at least V8 based browsers will not show you a line
 ## Advanced Usage
 
 The exported function supports a second param which is a funcion that gets to modify the output after the eval was added. You may find this useful for i.e. adding CommonJS module wrappers. For an example see example_common_js_simulator.js.
+
+## Fine print
+
+Pull requests are very much appreciated. Please sign the [Google Code contributor license agreement](http://code.google.com/legal/individual-cla-v1.0.html) (There is a convenient online form) before submitting.
+
+<dl>
+  <dt>Author</dt><dd><a href="https://github.com/cramforce">Malte Ubl (Google Inc.)</a></dd>
+  <dt>Copyright</dt><dd>Copyright © 2013 Google, Inc.</dd>
+  <dt>License</dt><dd>Apache 2.0</dd>
+</dl>
