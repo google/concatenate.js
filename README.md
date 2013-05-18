@@ -1,14 +1,16 @@
 concatenate.js
 ==============
 
-Demonstrates a technique to bundle large numbers of JS files into a single file while maintaining the original file boundaries and names inside development tools. Use this to make your JavaScript serving system be awesome during development without the complexity of source maps.
+Implements a technique to bundle large numbers of JS files into a single file while maintaining the original file boundaries and names inside development tools. Use this to make your JavaScript serving system be awesome during development without the complexity of source maps.
 
 The module rovides a single function to concatenate a list of JavaScript files into a single output stream in a way that, when executed in the browser, maintains the illusion in JS development tools, that the files had been loaded as individual script tags.
+
+Demo: http://jsbin.com/isozid/1/quiet
 
 ## When would you use it
 
 - When you have too many JS files to make loading via script tags feasible (because the HTTP requests take too long) during development.
-- As a component of i.e. browserify to deliver slightly modified JS files in a single response while maintaining the original files.
+- As a component of a script loader to deliver slightly modified JS files in a single response while maintaining the original files. (i.e. to serve CommonJS files to the browser.)
 - ONLY FOR DEVELOPMENT, DO NOT USE THIS IN PRODUCTION!
 
 ## Usage
@@ -55,11 +57,9 @@ When you have a syntax error at least V8 based browsers will not show you a line
 
 ## Advanced Usage
 
-The exported function supports a second param which is a funcion that gets to modify the output after the eval was added. You may find this useful for i.e. adding CommonJS module wrappers. For an example see example_common_js_simulator.js.
+The exported function supports a second param which is a function that gets to modify the output after the eval was added. You may find this useful for i.e. adding CommonJS module wrappers. For an example see example_common_js_simulator.js.
 
 ## Fine print
-
-Pull requests are very much appreciated. Please sign the [Google Code contributor license agreement](http://code.google.com/legal/individual-cla-v1.0.html) (There is a convenient online form) before submitting.
 
 <dl>
   <dt>Author</dt><dd><a href="https://github.com/cramforce">Malte Ubl (Google Inc.)</a></dd>
