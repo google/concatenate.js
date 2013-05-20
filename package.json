@@ -1,5 +1,5 @@
 {
-  "name": "concatenate",
+  "name": "concatenate-js",
   "version": "0.1.0",
   "author": "Malte Ubl <malte.ubl@gmail.com>",
   "description": "Concatenate JavaScript with awesome debuggability.",
