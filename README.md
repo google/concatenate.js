@@ -5,7 +5,8 @@ Implements a technique to bundle large numbers of JS files into a single file wh
 
 The module rovides a single function to concatenate a list of JavaScript files into a single output stream in a way that, when executed in the browser, maintains the illusion in JS development tools, that the files had been loaded as individual script tags.
 
-Demo: http://jsbin.com/isozid/1/quiet
+- Demo: http://jsbin.com/isozid/1/quiet
+- npm: https://npmjs.org/package/concatenate-js
 
 ## When would you use it
 
