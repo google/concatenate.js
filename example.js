@@ -4,11 +4,11 @@ var concatenate = require('./concatenate');
 
 console.log(concatenate([
   {
-    content: 'function foo() {alert("foo");\nalert("foo2")}',
+    content: 'function foo() {\n  alert("foo");\n  alert("foo2");\n}\n',
     filename: 'js/foo.js'
   },
   {
-    content: 'function bar() {alert("bar");\nalert("bar2")}',
+    content: 'function bar() {\n  alert("bar");\n  alert("bar2");\n}\n',
     filename: 'js/bar.js',
     hostname: 'app2'
   },
