@@ -7,7 +7,7 @@ The module provides a single function to concatenate a list of JavaScript files 
 
 ![Chrome Dev Tools screen shot](http://i.imgur.com/YPc20MJ.png)
 
-- Demo: http://jsbin.com/isozid/2/quiet
+- Demo: http://jsbin.com/isozid/3/quiet
 - npm: https://npmjs.org/package/concatenate-js
 
 ## When would you use it

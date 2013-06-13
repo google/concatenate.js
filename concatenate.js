@@ -41,6 +41,10 @@ module.exports = function(files, opt_wrap) {
     var filename = sanitizeSingleLineComment(file.filename).replace(/^\//, '');
     var hostname = sanitizeSingleLineComment(file.hostname || 'app');
     var url = 'http://' + hostname + '/' + filename;
+    // //# is the new format. This was changed from //@ due to an
+    // incompatibility with IE conditional compilation. For now we support
+    // both.
+    content += '\n//# sourceURL=' + url;
     content += '\n//@ sourceURL=' + url;
     var js = 'eval(' + JSON.stringify(content) + ');\n';
 
